@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+   <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" 
+  integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS Stylesheet--> 
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GoogleFont--> 
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="page">
+        <!-- Title and subtitle -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <h1>Australia's Global Trade: Imports and Exports by Country</h1>
+                <div class="desc-head">
+                <p>Presenting data from the <b>Australian Bureau Force(ABF)</b>  and the <b> Australian Bureau of Statistics (ABS)</b>  
+                 , this interactive platform offers a dynamic view of Australia’s global trade landscape. 
+                 Dive deep into Australia’s import and export activities, segmented by country, industry, and state, and 
+                 discover how economic interactions with regions across the world have evolved over time. 
+                 Explore now to gain insightful perspectives on the industries and countries driving Australia's trade growth!
+                </p>
+                </div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+    
+        <!-- Choropleth map -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div class="map-container">
+                <div id="map"></div>
+                <p>Bullying statistics across Victoria vary greatly, with some correlation to location. In most regions,
+                    neighbouring LGAs have similar bullying rates and Metropolitan Melbourne has lower rates than in Regional
+                    Victoria.
+                    However, in 2016, the LGA with the highest reported rate (30.5%), Northern Grampians near the western border,
+                    is directly adjacent to the LGA with the lowest rate (Southern Grampians, 4.3%). </p>
+            </div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+
+        <!-- Caption/small text -->
+        <!-- <div class="pure-g">
+            <div class="pure-u-1-1">
+           
+            </div>
+        </div> -->
+      <!-- end pure grid group -->
+
+        <!-- Line chart map -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div class="vis-container">
+                    <!-- Vega-Lite chart will be embedded here -->
+                    <div id="line" class="vis-item"></div>
+                    <div id="dropdown">
+                      <label for="yearSelect">Select Year: </label>
+                      <select id="yearSelect">
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020" selected>2020</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+    </div>
+
+    <script type="text/javascript">
+        var choropleth_map = "visualisations/choropleth_map.vg.json";
+        var line = "visualisations/line_chart.vg.json";
+
+        // Corrected Vega embed function
+        vegaEmbed('#map', choropleth_map, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#line', line).then(({view}) => {
+            const selectYear = document.getElementById('yearSelect');
+
+            // Update the view when the dropdown value changes
+            selectYear.addEventListener('change', function() {
+            view.signal('selectedYear', parseInt(this.value)).run();
+            });
+        });
+    </script>
+</body>
+</html>

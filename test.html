@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vega-Lite Chart with Dropdown</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    #dropdown {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    #vis {
+      position: relative;
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="vis"></div>
+<div id="dropdown">
+  <label for="yearSelect">Select Year: </label>
+  <select id="yearSelect">
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020" selected>2020</option>
+  </select>
+</div>
+
+<script>
+  var spec = "visualisations/line_chart.vg.json";  // Add your Vega-Lite spec here.
+
+  vegaEmbed('#vis', spec).then(({view}) => {
+    const selectYear = document.getElementById('yearSelect');
+
+    // Update the view when the dropdown value changes
+    selectYear.addEventListener('change', function() {
+      view.signal('selectedYear', parseInt(this.value)).run();
+    });
+  });
+</script>
+
+</body>
+</html>

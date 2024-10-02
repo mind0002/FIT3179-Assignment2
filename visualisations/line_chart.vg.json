@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia's Export Trends by Industry and State (2014-2020)",
+    "anchor": "middle"
+  },
+  "width": 800,
+  "height": "container",
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2020
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/refs/heads/main/data/exp_industry_state_year.csv"
+  },
+  "hconcat": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true,
+        "tooltip": true
+      },
+      "params": [{
+          "name": "highlight",
+          "select": {"type": "point", "fields": ["Industry"]},
+          "bind": "legend"
+      }],
+      "transform": [
+        {
+          "calculate":"year(datum.Year)",
+          "as": "data_year"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Year"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Value($m)",
+          "type": "quantitative",
+          "title": "Value of Export Goods Value ($m)"
+        },
+        "color": {
+          "field": "Industry",
+          "type": "nominal",
+          "legend": {
+            "title": "Industry",
+            "orient": "right",
+            "labelFont": "Afacad Flux",
+            "titleFont": "Afacad Flux"
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "highlight",
+            "value": 1
+          },
+          "value": 0.5
+        },
+        "tooltip": [
+          {"field": "Industry", "type": "nominal", "title": "Industry"},
+          {"field": "data_year", "type": "quantitative", "title": "Year"},
+          {"aggregate": "sum", "field": "Value($m)", "type": "quantitative", "title": "Export Value ($m)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "tooltip": true
+      },
+      "transform": [
+        {
+          "filter": "length(data('highlight_store')) == 0 || datum.Industry == data('highlight_store')[0].values[0]"
+        },
+        {
+          "filter": "year(datum.Year) == selectedYear"
+        },
+        {
+          "calculate": "year(datum.Year)",
+          "as": "data_year"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal",
+          "title": "State"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Value($m)",
+          "type": "quantitative",
+          "title": "Export Value ($m)"
+        },
+        "color": {
+          "value": "#41ab5d"
+        },
+        "tooltip": [
+          {"field": "data_year", "type": "nominal", "title": "Year"},
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"aggregate": "sum", "field": "Value($m)", "type": "quantitative", "title": "Export Value ($m)"}
+        ]
+      }
+    }
+  ], "spacing": 75,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Afacad Flux",
+      "titleFont": "Afacad Flux",
+      "titleFontSize": 14,
+      "labelFontSize": 14
+    },
+    "legend": {
+      "labelFont": "Afacad Flux",
+      "titleFont": "Afacad Flux",
+      "titleFontSize": 14,
+      "labelFontSize": 14
+    },
+    "header": {
+      "labelFont": "Afacad Flux",
+      "titleFont": "Afacad Flux"
+    },
+    "title": {
+      "font": "Afacad Flux",
+      "fontSize": 18,
+      "fontWeight": 600
+    }
+  }
+}

@@ -1,0 +1,288 @@
+﻿Industry,State,Year,Value($m)
+Agriculture and fishing,NSW,2014,518
+Agriculture and fishing,NSW,2015,323
+Agriculture and fishing,NSW,2016,329
+Agriculture and fishing,NSW,2017,428
+Agriculture and fishing,NSW,2018,691
+Agriculture and fishing,NSW,2019,911
+Agriculture and fishing,NSW,2020,621
+Agriculture and fishing,VIC,2014,1197
+Agriculture and fishing,VIC,2015,959
+Agriculture and fishing,VIC,2016,1025
+Agriculture and fishing,VIC,2017,1139
+Agriculture and fishing,VIC,2018,1140
+Agriculture and fishing,VIC,2019,1379
+Agriculture and fishing,VIC,2020,1163
+Agriculture and fishing,QLD,2014,859
+Agriculture and fishing,QLD,2015,744
+Agriculture and fishing,QLD,2016,873
+Agriculture and fishing,QLD,2017,976
+Agriculture and fishing,QLD,2018,1007
+Agriculture and fishing,QLD,2019,975
+Agriculture and fishing,QLD,2020,992
+Agriculture and fishing,SA,2014,187
+Agriculture and fishing,SA,2015,251
+Agriculture and fishing,SA,2016,235
+Agriculture and fishing,SA,2017,250
+Agriculture and fishing,SA,2018,269
+Agriculture and fishing,SA,2019,368
+Agriculture and fishing,SA,2020,423
+Agriculture and fishing,WA,2014,499
+Agriculture and fishing,WA,2015,511
+Agriculture and fishing,WA,2016,481
+Agriculture and fishing,WA,2017,463
+Agriculture and fishing,WA,2018,493
+Agriculture and fishing,WA,2019,598
+Agriculture and fishing,WA,2020,463
+Agriculture and fishing,TAS,2014,108
+Agriculture and fishing,TAS,2015,165
+Agriculture and fishing,TAS,2016,230
+Agriculture and fishing,TAS,2017,217
+Agriculture and fishing,TAS,2018,335
+Agriculture and fishing,TAS,2019,333
+Agriculture and fishing,TAS,2020,394
+Agriculture and fishing,NT,2014,38
+Agriculture and fishing,NT,2015,40
+Agriculture and fishing,NT,2016,92
+Agriculture and fishing,NT,2017,110
+Agriculture and fishing,NT,2018,94
+Agriculture and fishing,NT,2019,49
+Agriculture and fishing,NT,2020,34
+Mining,NSW,2014,14762
+Mining,NSW,2015,14263
+Mining,NSW,2016,11515
+Mining,NSW,2017,15127
+Mining,NSW,2018,16346
+Mining,NSW,2019,18191
+Mining,NSW,2020,15708
+Mining,VIC,2014,2149
+Mining,VIC,2015,1719
+Mining,VIC,2016,1167
+Mining,VIC,2017,1247
+Mining,VIC,2018,1224
+Mining,VIC,2019,1235
+Mining,VIC,2020,1037
+Mining,QLD,2014,29877
+Mining,QLD,2015,29815
+Mining,QLD,2016,29589
+Mining,QLD,2017,45619
+Mining,QLD,2018,52392
+Mining,QLD,2019,64826
+Mining,QLD,2020,55311
+Mining,SA,2014,1833
+Mining,SA,2015,1621
+Mining,SA,2016,3055
+Mining,SA,2017,2628
+Mining,SA,2018,3182
+Mining,SA,2019,3812
+Mining,SA,2020,3406
+Mining,WA,2014,100572
+Mining,WA,2015,80053
+Mining,WA,2016,68758
+Mining,WA,2017,85974
+Mining,WA,2018,94730
+Mining,WA,2019,124932
+Mining,WA,2020,145315
+Mining,TAS,2014,1026
+Mining,TAS,2015,947
+Mining,TAS,2016,799
+Mining,TAS,2017,855
+Mining,TAS,2018,1016
+Mining,TAS,2019,990
+Mining,TAS,2020,1135
+Manufacturing,NT,2014,5702
+Manufacturing,NT,2015,5445
+Manufacturing,NT,2016,4022
+Manufacturing,NT,2017,4290
+Manufacturing,NT,2018,5079
+Manufacturing,NT,2019,8713
+Manufacturing,NT,2020,11508
+Manufacturing,NSW,2014,9302
+Manufacturing,NSW,2015,10808
+Manufacturing,NSW,2016,11534
+Manufacturing,NSW,2017,13355
+Manufacturing,NSW,2018,14583
+Manufacturing,NSW,2019,17144
+Manufacturing,NSW,2020,17055
+Manufacturing,VIC,2014,11870
+Manufacturing,VIC,2015,11964
+Manufacturing,VIC,2016,11836
+Manufacturing,VIC,2017,11666
+Manufacturing,VIC,2018,11910
+Manufacturing,VIC,2019,13579
+Manufacturing,VIC,2020,14361
+Manufacturing,QLD,2014,7347
+Manufacturing,QLD,2015,8494
+Manufacturing,QLD,2016,8211
+Manufacturing,QLD,2017,8311
+Manufacturing,QLD,2018,9334
+Manufacturing,QLD,2019,11152
+Manufacturing,QLD,2020,10724
+Manufacturing,SA,2014,5027
+Manufacturing,SA,2015,4537
+Manufacturing,SA,2016,4109
+Manufacturing,SA,2017,3973
+Manufacturing,SA,2018,4052
+Manufacturing,SA,2019,4053
+Manufacturing,SA,2020,3718
+Manufacturing,WA,2014,20439
+Manufacturing,WA,2015,21348
+Manufacturing,WA,2016,22419
+Manufacturing,WA,2017,24790
+Manufacturing,WA,2018,25976
+Manufacturing,WA,2019,26781
+Manufacturing,WA,2020,29878
+Manufacturing,TAS,2014,1000
+Manufacturing,TAS,2015,803
+Manufacturing,TAS,2016,1162
+Manufacturing,TAS,2017,998
+Manufacturing,TAS,2018,1391
+Manufacturing,TAS,2019,1238
+Manufacturing,TAS,2020,1073
+Wholesale trade,NT,2014,9
+Wholesale trade,NT,2015,4
+Wholesale trade,NT,2016,7
+Wholesale trade,NT,2017,2
+Wholesale trade,NT,2018,2
+Wholesale trade,NT,2019,2
+Wholesale trade,NT,2020,1
+Wholesale trade,NSW,2014,8458
+Wholesale trade,NSW,2015,8509
+Wholesale trade,NSW,2016,7836
+Wholesale trade,NSW,2017,8556
+Wholesale trade,NSW,2018,9512
+Wholesale trade,NSW,2019,9938
+Wholesale trade,NSW,2020,8456
+Wholesale trade,VIC,2014,6615
+Wholesale trade,VIC,2015,6702
+Wholesale trade,VIC,2016,6720
+Wholesale trade,VIC,2017,7601
+Wholesale trade,VIC,2018,8964
+Wholesale trade,VIC,2019,8648
+Wholesale trade,VIC,2020,8031
+Wholesale trade,QLD,2014,3790
+Wholesale trade,QLD,2015,4209
+Wholesale trade,QLD,2016,4150
+Wholesale trade,QLD,2017,4780
+Wholesale trade,QLD,2018,4427
+Wholesale trade,QLD,2019,4331
+Wholesale trade,QLD,2020,3921
+Wholesale trade,SA,2014,3333
+Wholesale trade,SA,2015,3215
+Wholesale trade,SA,2016,3495
+Wholesale trade,SA,2017,3820
+Wholesale trade,SA,2018,3750
+Wholesale trade,SA,2019,2601
+Wholesale trade,SA,2020,2618
+Wholesale trade,WA,2014,7274
+Wholesale trade,WA,2015,7329
+Wholesale trade,WA,2016,6635
+Wholesale trade,WA,2017,7677
+Wholesale trade,WA,2018,7104
+Wholesale trade,WA,2019,8110
+Wholesale trade,WA,2020,6694
+Wholesale trade,TAS,2014,224
+Wholesale trade,TAS,2015,213
+Wholesale trade,TAS,2016,227
+Wholesale trade,TAS,2017,219
+Wholesale trade,TAS,2018,267
+Wholesale trade,TAS,2019,365
+Wholesale trade,TAS,2020,393
+Wholesale trade,NT,2014,356
+Wholesale trade,NT,2015,617
+Wholesale trade,NT,2016,532
+Wholesale trade,NT,2017,450
+Wholesale trade,NT,2018,474
+Wholesale trade,NT,2019,591
+Wholesale trade,NT,2020,730
+Retail trade,NSW,2014,742
+Retail trade,NSW,2015,720
+Retail trade,NSW,2016,866
+Retail trade,NSW,2017,1019
+Retail trade,NSW,2018,1187
+Retail trade,NSW,2019,2038
+Retail trade,NSW,2020,1619
+Retail trade,VIC,2014,388
+Retail trade,VIC,2015,459
+Retail trade,VIC,2016,525
+Retail trade,VIC,2017,749
+Retail trade,VIC,2018,879
+Retail trade,VIC,2019,889
+Retail trade,VIC,2020,967
+Retail trade,QLD,2014,635
+Retail trade,QLD,2015,741
+Retail trade,QLD,2016,718
+Retail trade,QLD,2017,384
+Retail trade,QLD,2018,299
+Retail trade,QLD,2019,313
+Retail trade,QLD,2020,466
+Retail trade,SA,2014,39
+Retail trade,SA,2015,35
+Retail trade,SA,2016,48
+Retail trade,SA,2017,64
+Retail trade,SA,2018,50
+Retail trade,SA,2019,82
+Retail trade,SA,2020,74
+Retail trade,WA,2014,130
+Retail trade,WA,2015,86
+Retail trade,WA,2016,110
+Retail trade,WA,2017,98
+Retail trade,WA,2018,109
+Retail trade,WA,2019,118
+Retail trade,WA,2020,131
+Retail trade,TAS,2014,2
+Retail trade,TAS,2015,1
+Retail trade,TAS,2016,7
+Retail trade,TAS,2017,15
+Retail trade,TAS,2018,26
+Retail trade,TAS,2019,27
+Retail trade,TAS,2020,24
+Retail trade,NT,2014,5
+Retail trade,NT,2015,5
+Retail trade,NT,2016,5
+Retail trade,NT,2017,7
+Retail trade,NT,2018,5
+Retail trade,NT,2019,5
+Retail trade,NT,2020,4
+Other,NSW,2014,2018
+Other,NSW,2015,1606
+Other,NSW,2016,3030
+Other,NSW,2017,3024
+Other,NSW,2018,3355
+Other,NSW,2019,4009
+Other,NSW,2020,4192
+Other,VIC,2014,1015
+Other,VIC,2015,1143
+Other,VIC,2016,1203
+Other,VIC,2017,1240
+Other,VIC,2018,1437
+Other,VIC,2019,1396
+Other,VIC,2020,1868
+Other,QLD,2014,1934
+Other,QLD,2015,2059
+Other,QLD,2016,3630
+Other,QLD,2017,5974
+Other,QLD,2018,6283
+Other,QLD,2019,5147
+Other,QLD,2020,4531
+Other,SA,2014,1672
+Other,SA,2015,1421
+Other,SA,2016,414
+Other,SA,2017,402
+Other,SA,2018,474
+Other,SA,2019,575
+Other,SA,2020,768
+Other,WA,2014,1021
+Other,WA,2015,903
+Other,WA,2016,753
+Other,WA,2017,809
+Other,WA,2018,789
+Other,WA,2019,892
+Other,WA,2020,1021
+Other,NT,2014,12
+Other,NT,2015,16
+Other,NT,2016,17
+Other,NT,2017,16
+Other,NT,2018,31
+Other,NT,2019,15
+Other,NT,2020,13
