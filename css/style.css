@@ -54,9 +54,9 @@ body {
     position: relative;
     width: 890px; /* Adjust width as necessary */
     height: auto;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
     padding-left: 15px;
-    padding-right: 5px;
+    padding-right: 10px;
     padding-top: 20px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -69,8 +69,9 @@ body {
     display: flex;
     width: 900px; /* Adjust width as necessary */
     height: auto;
-    padding-bottom: 30px;
-    padding-left: 10px;
+    padding-bottom: 1px;
+    padding-left: 15px;
+    padding-right: 10px;
     padding-top: 20px;
     background-color: #fff;
     justify-content: space-around;
@@ -80,8 +81,9 @@ body {
 
 .vis-item {
     flex: 1; /* Each visualization takes equal space */
-    padding-left: 90px ;
-    padding-right: 30px ;
+    padding-left: 80px ;
+    padding-right: 20px ;
+    padding-bottom: 10px ;
     border-radius: 5px;
     margin: 0 10px; /* Spacing between graphs */
     background-color: white;
@@ -92,7 +94,8 @@ body {
 #dropdown {
     position: absolute;
     padding-top: 15px;
-    bottom: 10px;
+    padding-bottom: 1px;
+    bottom: 130px;
     left: 77%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust to true center */
 }
