@@ -38,7 +38,11 @@
             "param": "click",
             "field": "Industry",
             "type": "nominal",
-            "legend": null
+            "legend": null,
+            "scale": {
+              "domain": ["Mining", "Agriculture and fishing", "Manufacturing", "Wholesale trade", "Other"], 
+              "range": ["#c37857", "#3baea0", "#ffa952", "#8dc6ff", "#2e79ba","#b0757c"] 
+            }      
           },
           "value": "grey"
         },
@@ -88,7 +92,8 @@
                 "aggregate": "sum",
                 "field": "Value($m)",
                 "type": "quantitative",
-                "title": "Export Value ($m)"
+                "title": "Export Value ($m)",
+                "format": ","
               }
             ]
           }
@@ -169,7 +174,7 @@
           "title": "Export Value ($m)"
         },
         "color": {
-          "value": "#5c715e"
+          "value": "#639a67"
         },
         "tooltip": [
           {
@@ -191,7 +196,8 @@
             "aggregate": "sum",
             "field": "Value($m)",
             "type": "quantitative",
-            "title": "Export Value ($m)"
+            "title": "Export Value ($m)",
+            "format": ","
           }
         ]
       }
