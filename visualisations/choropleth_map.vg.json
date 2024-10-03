@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Australia's Global Trade Partners: Trade-to-GDP Ratio Across Countries (2013-2020)",
   "width": 800, 
-  "height": 350, 
+  "height": 400, 
   "params": [
     {
       "name": "data_type",
@@ -239,7 +239,10 @@
     },
     {
       "data": {
-        "values": [{"country": "Australia", "longitude": 138.775136, "latitude": -28.274398}]
+        "values": [{"country": "Australia", "longitude": 138.775136, "latitude": -28.274398},
+                   {"country": "China", "longitude": 104.195397, "latitude": 29.86166},
+                   {"country": "USA", "longitude": -95.712891, "latitude": 35.09024},
+                  {"country": "Russia", "longitude": 105.318756, "latitude": 53.52401}]
       },
       "mark": {
         "type": "text",
@@ -253,7 +256,7 @@
         "longitude": {"field": "longitude"},
         "latitude": {"field": "latitude"},
         "text": {"field": "country"},
-        "tooltip": {"value": "Australia"}
+        "tooltip": null
       }
     }
   ],
