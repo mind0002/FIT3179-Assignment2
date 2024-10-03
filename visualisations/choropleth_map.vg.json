@@ -116,6 +116,10 @@
         },
         {
           "filter": "datum.Year == selected_year && datum.Country != 'Australia'"
+        },
+        {
+          "calculate": "datum.Year",
+          "as": "data_year"
         }
       ],
       "mark": {
@@ -147,6 +151,11 @@
             "field": "Country",
             "type": "nominal",
             "title": "Country"
+          },
+          {
+            "field": "data_year",
+            "type": "quantitative",
+            "title": "Year"
           },
           {
             "field": "Selected Trade Value ($m)",

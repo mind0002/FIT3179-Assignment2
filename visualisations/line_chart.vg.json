@@ -2,6 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Australia's Export Trends by Industry and State (2014-2020)",
+    "subtitle": [
+      "Hint: Click the Line to Update the Bar Chart by Industry"
+    ],
+    "subtitleFont": "Afacad Flux",
     "anchor": "middle"
   },
   "width": 800,
@@ -148,7 +152,7 @@
           "as": "data_year"
         },
         {
-          "calculate": "length(data('click_store')) == 0 ? 'All Industry' : data('click_store')[0].values[0]",
+          "calculate": "length(data('click_store')) == 0 ? 'All Industries' : data('click_store')[0].values[0]",
           "as": "SelectedIndustry"
         }
       ],
