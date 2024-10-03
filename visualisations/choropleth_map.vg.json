@@ -107,9 +107,6 @@
           "as": "Selected Trade Value ($m)"
         },
         {
-          "filter": "datum[data_type] > 0"
-        },
-        {
           "calculate": "(datum.GDP != null && datum.GDP != 0) ? datum[data_type] / datum.GDP : 0",
           "as": "Normalized Trade Value (%)"
         },
