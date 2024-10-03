@@ -1,18 +1,4 @@
 ﻿Year,Country,Import,Export,GDP
-2013,Australia,0,0,0
-2014,Australia,0,0,0
-2015,Australia,0,0,0
-2016,Australia,0,0,0
-2017,Australia,0,0,0
-2018,Australia,0,0,0
-2019,Australia,0,0,0
-2020,Australia,0,0,0
-2013,Venezuela,0,0,0
-2013,Antarctica,0,0,0
-2013,S. Sudan,0,0,0
-2013,Central African Rep.,0,0,0
-2013,North Korea,0,0,0
-2013,Bosnia and Herz.,0,0,0
 2013,Afghanistan,0,5,20.88379576
 2013,Albania,0,0,13.24384709
 2013,Algeria,82,2,238.1087323
@@ -32,7 +18,7 @@
 2013,Bermuda,22,0,6.70240914
 2013,Bhutan,0,0,1.98318614
 2013,Bolivia,22,0,31.78150135
-2013,Bosnia and Herzegovina,0,1,18.84448208
+2013,Bosnia and Herz.,0,1,18.84448208
 2013,Botswana,1,6,14.79409885
 2013,Brazil,577,722,2563.327204
 2013,Brunei Darussalam,854,46,18.75659188
@@ -227,7 +213,7 @@
 2014,Bermuda,9,0,7.11610161
 2014,Bhutan,0,0,2.28253865
 2014,Bolivia,29,0,36.60814873
-2014,Bosnia and Herzegovina,4,0,20.59028389
+2014,Bosnia and Herz.,4,0,20.59028389
 2014,Botswana,0,1,17.16353721
 2014,Brazil,599,1038,2724.89701
 2014,Brunei Darussalam,945,43,18.96943083
@@ -421,7 +407,7 @@
 2015,Bermuda,2,0,8.86468708
 2015,Bhutan,0,0,2.87062631
 2015,Bolivia,23,1,43.96042209
-2015,Bosnia and Herzegovina,11,0,21.85265964
+2015,Bosnia and Herz.,11,0,21.85265964
 2015,Botswana,0,8,18.02466234
 2015,Brazil,644,1117,2400.773738
 2015,Brunei Darussalam,397,46,17.22477748
@@ -615,7 +601,7 @@
 2016,Bermuda,0,0,9.28607962
 2016,Bhutan,0,0,3.12599112
 2016,Bolivia,13,1,45.6788501
-2016,Bosnia and Herzegovina,27,0,23.03640449
+2016,Bosnia and Herz.,27,0,23.03640449
 2016,Botswana,0,0,20.29860527
 2016,Brazil,754,1149,2416.690977
 2016,Brunei Darussalam,315,42,15.34304403
@@ -809,7 +795,7 @@
 2017,Bermuda,0,0,9.31926535
 2017,Bhutan,0,0,3.3811937
 2017,Bolivia,18,1,48.94112627
-2017,Bosnia and Herzegovina,24,0,23.91217866
+2017,Bosnia and Herz.,24,0,23.91217866
 2017,Botswana,8,1,21.01394294
 2017,Brazil,736,1497,2692.466088
 2017,Brunei Darussalam,272,41,15.82480585
@@ -1003,7 +989,7 @@
 2018,Bermuda,0,0,9.68090152
 2018,Bhutan,0,0,3.46098787
 2018,Bolivia,14,1,53.97481229
-2018,Bosnia and Herzegovina,20,0,27.44322439
+2018,Bosnia and Herz.,20,0,27.44322439
 2018,Botswana,0,0,22.81830744
 2018,Brazil,828,1405,2568.185353
 2018,Brunei Darussalam,767,50,18.17611481
@@ -1197,7 +1183,7 @@
 2019,Bermuda,0,1,10.68017621
 2019,Bhutan,0,0,3.9358414
 2019,Bolivia,21,0,58.83630546
-2019,Bosnia and Herzegovina,20,0,29.46843163
+2019,Bosnia and Herz.,20,0,29.46843163
 2019,Botswana,0,19,24.06364768
 2019,Brazil,854,1019,2695.109107
 2019,Brunei Darussalam,1214,51,19.37825627
@@ -1391,7 +1377,7 @@
 2020,Bermuda,0,1,10.00105343
 2020,Bhutan,0,0,3.56876793
 2020,Bolivia,15,0,53.19140498
-2020,Bosnia and Herzegovina,19,0,29.37089515
+2020,Bosnia and Herz.,19,0,29.37089515
 2020,Botswana,1,25,21.7243324
 2020,Brazil,874,743,2143.504022
 2020,Brunei Darussalam,1353,386,17.43401787
@@ -1566,3 +1552,59 @@
 2020,Yemen,0,15,27.61956966
 2020,Zambia,9,15,26.338447
 2020,Zimbabwe,0,15,31.23494288
+2013,Australia,0,0,0
+2014,Australia,0,0,0
+2015,Australia,0,0,0
+2016,Australia,0,0,0
+2017,Australia,0,0,0
+2018,Australia,0,0,0
+2019,Australia,0,0,0
+2020,Australia,0,0,0
+2013,Venezuela,0,6,384.5845477
+2014,Venezuela,0,7,535.161264
+2015,Venezuela,1,31,535.161264
+2016,Venezuela,0,15,535.161264
+2017,Venezuela,0,0,535.161264
+2018,Venezuela,4,1,535.161264
+2019,Venezuela,0,5,535.161264
+2020,Venezuela,0,1,535.161264
+2013,S. Sudan,0,0,0
+2014,S. Sudan,0,0,0
+2015,S. Sudan,0,0,0
+2016,S. Sudan,0,0,0
+2017,S. Sudan,0,0,0
+2018,S. Sudan,0,0,0
+2019,S. Sudan,0,0,0
+2020,S. Sudan,0,0,0
+2013,Central African Rep.,0,0,0
+2014,Central African Rep.,0,0,0
+2015,Central African Rep.,0,0,0
+2016,Central African Rep.,0,0,0
+2017,Central African Rep.,0,0,0
+2018,Central African Rep.,0,0,0
+2019,Central African Rep.,0,0,0
+2020,Central African Rep.,0,0,0
+2013,Kyrgyzstan,0,0,0
+2014,Kyrgyzstan,0,0,0
+2015,Kyrgyzstan,0,0,0
+2016,Kyrgyzstan,0,0,0
+2017,Kyrgyzstan,0,0,0
+2018,Kyrgyzstan,0,0,0
+2019,Kyrgyzstan,0,0,0
+2020,Kyrgyzstan,0,0,0
+2013,Antarctica,0,0,0
+2014,Antarctica,0,0,0
+2015,Antarctica,0,0,0
+2016,Antarctica,0,0,0
+2017,Antarctica,0,0,0
+2018,Antarctica,0,0,0
+2019,Antarctica,0,0,0
+2020,Antarctica,0,0,0
+2013,North Korea,0,0,0
+2014,North Korea,0,0,0
+2015,North Korea,0,0,0
+2016,North Korea,0,0,0
+2017,North Korea,0,0,0
+2018,North Korea,0,0,0
+2019,North Korea,0,0,0
+2020,North Korea,0,0,0

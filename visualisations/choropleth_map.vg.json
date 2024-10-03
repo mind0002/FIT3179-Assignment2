@@ -185,7 +185,7 @@
           "as": "Selected Trade Value ($m)"
         },
         {
-          "filter": "datum[data_type] == 0"
+          "filter": "datum.Year == selected_year && datum.Country != 'Australia' && datum[data_type] == 0"
         },
         {
           "calculate": "(datum[data_type] == null || datum[data_type] == 0) ? (data_type == 'Import' ? 'No Import Goods from ' : 'No Export Goods to ') + datum['Country'] : null",
