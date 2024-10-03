@@ -5,7 +5,7 @@
     "anchor": "middle"
   },
   "width": 800,
-  "height": "container",
+  "height": 400,
   "params": [
     {
       "name": "selectedYear",
@@ -13,7 +13,7 @@
     }
   ],
   "data": {
-    "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/refs/heads/main/data/exp_industry_state_year.csv"
+    "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/exp_industry_state_year.csv"
   },
   "hconcat": [
     {
@@ -110,7 +110,9 @@
             "align": "left",
             "dx": 5,
             "dy": -5,
-            "fontSize": 12
+            "fontSize": 12,
+            "font": "Afacad Flux",
+            "fontWeight":600
           },
           "encoding": {
             "x": {
@@ -144,6 +146,10 @@
         {
           "calculate": "year(datum.Year)",
           "as": "data_year"
+        },
+        {
+          "calculate": "length(data('click_store')) == 0 ? 'All Industry' : data('click_store')[0].values[0]",
+          "as": "SelectedIndustry"
         }
       ],
       "encoding": {
@@ -159,11 +165,11 @@
           "title": "Export Value ($m)"
         },
         "color": {
-          "value": "#41ab5d"
+          "value": "#5c715e"
         },
         "tooltip": [
           {
-            "field": "datum.Industry ",
+            "field": "SelectedIndustry",
             "type": "nominal",
             "title": "Industry"
           },
