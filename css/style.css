@@ -40,28 +40,69 @@ body {
     position: relative;
     background-color: #CCE0AC;
     text-align: center;
-    width: 900px;
-    padding-bottom: 10px;
+    width: 130%; /* Reduce the width to ensure it doesn't overflow */
+    padding: 1px;
     padding-left: 10px;
-    padding-top: 10px;
+    padding-right: 10px;
     border-radius: 5px;
-    margin-left: 15px;
+    margin: 0 auto; /* This centers the green box horizontally */
+    margin-top: 12px;
+    margin-left: -55px; /* This moves the green box to the left */
+    display: block;
+    font-size: 17px; /* Change this value to adjust the font size */
 }
 
+.pure-img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  .trade-image-left {
+    max-width: 70%; /* Ensure the image is responsive */
+    height: auto;
+    display: block;
+    margin-left: 10px; /* Move the left image by 150px */
+  }
+  
+  .trade-image-right {
+    max-width: 67%; /* Ensure the image is responsive */
+    height: auto;
+    display: block;
+    padding-left: 90px;
+    margin-right: 10px; /* Move the right image by 150px */
+  }
+  
 
 /* Center and style the map container */
 .map-container{
     position: relative;
     width: 890px; /* Adjust width as necessary */
     height: auto;
-    padding-bottom: 2px;
+    padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 10px;
-    padding-top: 20px;
+    padding-top: 10px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     
+}
+
+.desc-map {
+    position: relative;
+    background-color: #CCE0AC;
+    text-align: center;
+    width: 90%; /* Reduce the width to ensure it doesn't overflow */
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    margin: 0 auto; /* This centers the green box horizontally */
+    margin-top: 1px;
+    margin-left: 35px; /* This moves the green box to the left */
+    font-size: 16px; /* Change this value to adjust the font size */
+    display: block;
 }
 
 .vis-container {
@@ -77,16 +118,6 @@ body {
     justify-content: space-around;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-}
-
-.vis-item {
-    flex: 1; /* Each visualization takes equal space */
-    padding-left: 80px ;
-    padding-right: 20px ;
-    padding-bottom: 10px ;
-    border-radius: 5px;
-    margin: 0 10px; /* Spacing between graphs */
-    background-color: white;
 }
 
 

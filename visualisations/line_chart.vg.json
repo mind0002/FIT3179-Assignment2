@@ -8,8 +8,6 @@
     "subtitleFont": "Afacad Flux",
     "anchor": "middle"
   },
-  "width": 800,
-  "height": 400,
   "params": [
     {
       "name": "selectedYear",
@@ -20,7 +18,8 @@
     "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/exp_industry_state_year.csv"
   },
   "hconcat": [
-    {
+    { "width": 300,  
+      "height": 300,
       "encoding": {
         "x": {
           "field": "Year",
@@ -141,6 +140,8 @@
       ]
     },
     {
+      "width": 300,  
+      "height": 300,
       "mark": {
         "type": "bar",
         "tooltip": true
@@ -203,7 +204,7 @@
       }
     }
   ],
-  "spacing": 75,
+  "spacing": 0,
   "config": {
     "view": {
       "stroke": null
