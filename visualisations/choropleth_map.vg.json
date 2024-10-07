@@ -142,8 +142,8 @@
             "orient": "right",
             "title": "Trade-to-GDP Ratio",
             "offset": -43,
-            "titleFontSize": 16,
-            "labelFontSize": 16
+            "titleFontSize": 14,
+            "labelFontSize": 12
           }
         },
         "tooltip": [

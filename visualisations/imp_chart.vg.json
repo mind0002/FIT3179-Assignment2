@@ -1,49 +1,55 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-      "text": "Australia's Import Trends by Industry and Country (2014-2020)",
-      "subtitle": [
-        "Hint: Click the line to update the bar chart by Industry and double click to reset"
-      ],
-      "subtitleFont": "Afacad Flux",
-      "anchor": "middle"
-    },
-    "params": [
-      {
-        "name": "selectedYear",
-        "value": 2020
-      }
-    ],
-    "data": {
-      "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
-    },
+        "text": "Australia's Import Trends by Industry Country (2018-2020)",
+        "subtitle": [
+          "Hint: Click the cell to update the radial plot by Industry and double click to reset"
+        ],
+        "subtitleFont": "Afacad Flux",
+        "anchor": "middle"
+      },
     "hconcat": [
-      { "width": 280,  
+      {
+        "width": 270,  
         "height": 300,
+        "data": {
+          "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
+        },
         "encoding": {
           "x": {
-            "field": "Year",
-            "type": "temporal",
+            "field": "Year", 
+            "type": "ordinal", 
             "title": "Year"
           },
           "y": {
-            "aggregate": "sum", 
-            "field": "Value($m)", 
-            "type": "quantitative",
-            "title": "Value of Export Goods Value ($m)"
+            "field": "Country", 
+            "type": "nominal", 
+            "title": "Country"
           },
           "color": {
             "condition": {
               "param": "click",
-              "field": "Industry",
-              "type": "nominal",
-              "legend": null,
-              "scale": {
-                "domain": ["Mining", "Agriculture and fishing", "Manufacturing", "Wholesale trade", "Other"], 
-                "range": ["#c37857", "#3baea0", "#ffa952", "#8dc6ff", "#2e79ba","#b0757c"] 
-              }      
+              "aggregate": "sum",
+              "field": "Value($m)",
+              "type": "quantitative",
+              "scale": {"scheme": "yellowgreen"},
+              "legend": {
+                "title": "Import Value($m)",
+                "direction": "vertical",
+                "gradientLength": 100,
+                "titleFontSize": 14,
+                "labelFontSize": 12
+              }
             },
             "value": "grey"
+          },
+          "stroke": {
+            "condition": {
+              "param": "click",
+              "empty": false,
+              "value": "black"
+            },
+            "value": null
           },
           "opacity": {
             "condition": {
@@ -55,156 +61,130 @@
         },
         "layer": [
           {
-            "params": [{
-              "name": "click",
-              "select": {
-                "type": "point",
-                "fields": ["Industry"],
-                "clear": "dblclick"
-              }
-            }],
-            "mark": {
-              "type": "line",
-              "strokeWidth": 8,
-              "point": true,
-              "stroke": "transparent"
-            },
-            "transform": [
+            "params": [
               {
-                "calculate": "year(datum.Year)",
-                "as": "data_year"
+                "name": "click",
+                "select": {
+                  "type": "point",
+                  "fields": ["Year", "Country"],
+                  "clear": "dblclick"
+                }
               }
             ],
+            "mark": {"type":"rect", "strokeWidth": 2},
             "encoding": {
               "tooltip": [
-                {
-                  "field": "Industry",
-                  "type": "nominal",
-                  "title": "Industry"
-                },
-                {
-                  "field": "data_year",
-                  "type": "quantitative",
-                  "title": "Year"
-                },
+                {"field": "Country", "type": "nominal", "title": "Country"},
+                {"field": "Year", "type": "ordinal", "title": "Year"},
                 {
                   "aggregate": "sum",
                   "field": "Value($m)",
                   "type": "quantitative",
-                  "title": "Export Value ($m)",
-                  "format": ","
+                  "title": "Total Value"
                 }
               ]
             }
           },
           {
-            "mark": "line"
-          },
-          {
-            "mark": "circle"
-          },
-          {
-            "data": {
-              "values": [
-                {"Industry": "Agriculture and fishing", "x": 1576300900000, "y": 0},
-                {"Industry": "Mining", "x": 1576300900000, "y": 221912},
-                {"Industry": "Manufacturing", "x": 1576300900000, "y": 88317},
-                {"Industry": "Wholesale trade", "x": 1576300900000, "y": 30844},
-                {"Industry": "Other", "x": 1576300900000, "y": 12393}
-              ]
-            },
             "mark": {
               "type": "text",
-              "align": "left",
-              "dx": 5,
-              "dy": -5,
-              "fontSize": 16,
               "font": "Afacad Flux",
-              "fontWeight":600
+              "fontSize": 14
             },
             "encoding": {
-              "x": {
-                "field": "x",
-                "type": "temporal"
-              },
-              "y": {
-                "field": "y",
-                "type": "quantitative"
-              },
               "text": {
-                "field": "Industry",
-                "type": "nominal"
-              }
+                "aggregate": "sum",
+                "field": "Value($m)",
+                "type": "quantitative",
+                "format": ","
+              },
+              "color": {"value": "black"},
+              "size": {"value": 12}
             }
           }
         ]
       },
-      {
-        "width": 280,  
-        "height": 300,
-        "mark": {
-          "type": "bar",
-          "tooltip": true
+      { 
+        "width": 250,  
+        "height": 300, 
+        "data": {
+          "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
         },
         "transform": [
           {
-            "filter": "length(data('click_store')) == 0 || datum.Industry == data('click_store')[0].values[0]"
+            "filter": "length(data('click_store')) == 0 || (datum.Year == data('click_store')[0].values[0] && datum.Country == data('click_store')[0].values[1])"
           },
           {
-            "filter": "year(datum.Year) == selectedYear"
+            "calculate": "length(data('click_store')) == 0 ? 'All Years' : (data('click_store')[0].values[0] ? data('click_store')[0].values[0] : 'All Years')",
+            "as": "SelectedYear"
           },
           {
-            "calculate": "year(datum.Year)",
-            "as": "data_year"
+            "calculate": "length(data('click_store')) == 0 ? 'All Countries' : (data('click_store')[0].values[1] ? data('click_store')[0].values[1] : 'All Countries')",
+            "as": "SelectedCountry"
+          }
+        ],
+        "layer": [
+          {
+            "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
           },
           {
-            "calculate": "length(data('click_store')) == 0 ? 'All Industries' : data('click_store')[0].values[0]",
-            "as": "SelectedIndustry"
+            "mark": {
+              "type": "text", 
+              "radiusOffset": 20,
+              "font": "Afacad Flux",
+              "fontSize": 14
+            },
+            "encoding": {
+              "text": {
+                "aggregate": "sum",
+                "field": "Value($m)",
+                "type": "quantitative",
+                "format": ","
+              }
+            }
           }
         ],
         "encoding": {
-          "x": {
-            "field": "State",
-            "type": "nominal",
-            "title": "State"
-          },
-          "y": {
+          "theta": {
             "aggregate": "sum",
             "field": "Value($m)",
             "type": "quantitative",
-            "title": "Export Value ($m)"
+            "stack": true
           },
           "color": {
-            "value": "#639a67"
+            "field": "Industry",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Manufacturing", "Other industries", "Retail trade", "Wholesale trade"], 
+              "range": ["#c37857", "#ffa952", "#93a7d1", "#b6cdbd"]
+            },
+            "legend": {
+              "title": "Industry",
+              "orient": "right",
+              "offset": 15,
+              "titleFontSize": 14,
+              "labelFontSize": 12
+            }
+          },
+          "radius": {
+            "aggregate": "sum",
+            "field": "Value($m)",
+            "scale": {
+              "type": "sqrt",
+              "zero": true,
+              "rangeMin": 1, 
+              "rangeMax": 125
+            }
           },
           "tooltip": [
-            {
-              "field": "SelectedIndustry",
-              "type": "nominal",
-              "title": "Industry"
-            },
-            {
-              "field": "data_year",
-              "type": "nominal",
-              "title": "Year"
-            },
-            {
-              "field": "State",
-              "type": "nominal",
-              "title": "State"
-            },
-            {
-              "aggregate": "sum",
-              "field": "Value($m)",
-              "type": "quantitative",
-              "title": "Export Value ($m)",
-              "format": ","
-            }
+            {"field": "SelectedYear", "type": "ordinal", "title": "Year"},
+            {"field": "SelectedCountry", "type": "nominal", "title": "Country"},
+            {"field": "Industry", "type": "nominal", "title": "Industry"},
+            {"aggregate": "sum","field": "Value($m)", "type": "quantitative", "title": "Imported Value($m)", "format": ","}
           ]
         }
       }
-    ],
-    "spacing": 0,
+    ],"spacing": 2,
     "config": {
       "view": {
         "stroke": null
