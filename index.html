@@ -74,10 +74,10 @@
             <div class="pure-u-1-1">
                
                     <!-- Vega-Lite chart will be embedded here -->
-                    <div id="line"></div>
+                    <div id="exp_chart"></div>
                        <!-- Dropdown for selecting year -->
                     <div id="dropdown">
-                        <label for="yearSelect">Select Year: </label>
+                        <label for="yearSelect">Year: </label>
                         <select id="yearSelect">
                             <option value="2014">2014</option>
                             <option value="2015">2015</option>
@@ -88,42 +88,74 @@
                             <option value="2020" selected>2020</option>
                         </select>
                     </div>
+                    <div class ="desc-chart">
                     <!-- Paragraph that appears below the chart and dropdown -->
-                    <p>The graphs above show a clear trend of increasing export value from 2014 to 2020, 
-                        particularly in industries such as <b>Mining</b> and <b>Manufacturing</b>, 
+                    <p>The graphs above show a clear trend of <b>increasing </b>export value from 2014 to 2020, 
+                        particularly in industries such as Mining and Manufacturing, 
                         which have seen steady growth. The bar chart then further breaks down the industry's exports 
                         by the Australian states, with <b>Western Australia</b> leading in export value for every industry,
                         especially for the mining industry. In contrast, <b>Northern Territory</b> and
                         <b>Tasmania</b>have the least export values for all the industries. This regional analysis
                         highlights the economic importance of industries specific to each state. </p>
-                 
-        
-                    
+                      </div>
                 </div>
             </div>
         </div>
-        
 
-         <!-- Caption/small text -->
-        <!-- <div class="pure-g">
-            <div class="pure-u-1-1">
-           
-            </div>
-        </div> -->
-      <!-- end pure grid group -->
-        <!-- end pure grid group -->
+        <div class="vis-container">
+          <div class="pure-g">
+          <div class="pure-u-1-1">
+             
+                  <!-- Vega-Lite chart will be embedded here -->
+                  <div id="imp_chart"></div>
+                     <!-- Dropdown for selecting year -->
+                  <div id="dropdown">
+                      <label for="yearSelect">Year: </label>
+                      <select id="yearSelect">
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2016">2016</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2020" selected>2020</option>
+                      </select>
+                  </div>
+                  <div class ="desc-chart">
+                  <!-- Paragraph that appears below the chart and dropdown -->
+                  <p>The graphs above show a clear trend of <b>increasing </b>export value from 2014 to 2020, 
+                      particularly in industries such as Mining and Manufacturing, 
+                      which have seen steady growth. The bar chart then further breaks down the industry's exports 
+                      by the Australian states, with <b>Western Australia</b> leading in export value for every industry,
+                      especially for the mining industry. In contrast, <b>Northern Territory</b> and
+                      <b>Tasmania</b>have the least export values for all the industries. This regional analysis
+                      highlights the economic importance of industries specific to each state. </p>
+                    </div>
+              </div>
+          </div>
+      </div>
+
     </div>
 
     <script type="text/javascript">
         var choropleth_map = "visualisations/choropleth_map.vg.json";
-        var line = "visualisations/line_chart.vg.json";
+        var exp_chart = "visualisations/exp_chart.vg.json";
+        var imp_chart = "visualisations/exp_chart.vg.json";
 
-        // Corrected Vega embed function
         vegaEmbed('#map', choropleth_map, { "actions": false }).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        vegaEmbed('#line', line).then(({view}) => {
+        vegaEmbed('#exp_chart', exp_chart).then(({view}) => {
+            const selectYear = document.getElementById('yearSelect');
+
+            // Update the view when the dropdown value changes
+            selectYear.addEventListener('change', function() {
+            view.signal('selectedYear', parseInt(this.value)).run();
+            });
+        });
+
+        vegaEmbed('#imp_chart', imp_chart).then(({view}) => {
             const selectYear = document.getElementById('yearSelect');
 
             // Update the view when the dropdown value changes

@@ -3,7 +3,7 @@
   "title": {
     "text": "Australia's Export Trends by Industry and State (2014-2020)",
     "subtitle": [
-      "Hint: Click the Line to Update the Bar Chart by Industry"
+      "Hint: Click the line to update the bar chart by Industry and double click to reset"
     ],
     "subtitleFont": "Afacad Flux",
     "anchor": "middle"
@@ -18,7 +18,7 @@
     "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/exp_industry_state_year.csv"
   },
   "hconcat": [
-    { "width": 300,  
+    { "width": 280,  
       "height": 300,
       "encoding": {
         "x": {
@@ -118,7 +118,7 @@
             "align": "left",
             "dx": 5,
             "dy": -5,
-            "fontSize": 12,
+            "fontSize": 16,
             "font": "Afacad Flux",
             "fontWeight":600
           },
@@ -140,7 +140,7 @@
       ]
     },
     {
-      "width": 300,  
+      "width": 280,  
       "height": 300,
       "mark": {
         "type": "bar",
@@ -212,13 +212,13 @@
     "axis": {
       "labelFont": "Afacad Flux",
       "titleFont": "Afacad Flux",
-      "titleFontSize": 14,
+      "titleFontSize": 16,
       "labelFontSize": 14
     },
     "legend": {
       "labelFont": "Afacad Flux",
       "titleFont": "Afacad Flux",
-      "titleFontSize": 14,
+      "titleFontSize": 16,
       "labelFontSize": 14
     },
     "header": {
@@ -227,7 +227,7 @@
     },
     "title": {
       "font": "Afacad Flux",
-      "fontSize": 18,
+      "fontSize": 20,
       "fontWeight": 600
     }
   }
