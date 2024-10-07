@@ -11,10 +11,15 @@
     "hconcat": [
       {
         "width": 270,  
-        "height": 300,
+        "height": 280,
         "data": {
           "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
         },
+        "transform": [
+            {
+                "filter": "datum.Country != 'India' && datum.Country != 'Taiwan'"
+            }
+        ],
         "encoding": {
           "x": {
             "field": "Year", 
@@ -106,7 +111,7 @@
       },
       { 
         "width": 250,  
-        "height": 300, 
+        "height": 320, 
         "data": {
           "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
         },
@@ -130,7 +135,7 @@
           {
             "mark": {
               "type": "text", 
-              "radiusOffset": 20,
+              "radiusOffset": 30,
               "font": "Afacad Flux",
               "fontSize": 14
             },
@@ -160,8 +165,9 @@
             },
             "legend": {
               "title": "Industry",
-              "orient": "right",
-              "offset": 15,
+              "orient": "none",
+              "legendX": 250,
+              "legendY": -3,
               "titleFontSize": 14,
               "labelFontSize": 12
             }
@@ -173,7 +179,7 @@
               "type": "sqrt",
               "zero": true,
               "rangeMin": 1, 
-              "rangeMax": 125
+              "rangeMax": 135
             }
           },
           "tooltip": [
@@ -184,7 +190,7 @@
           ]
         }
       }
-    ],"spacing": 2,
+    ],"spacing": 0,
     "config": {
       "view": {
         "stroke": null
