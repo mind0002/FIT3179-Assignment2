@@ -55,12 +55,19 @@
             <div class="pure-u-1-1">
                 <div class="map-container">
                 <div id="map"></div>
-                <div class ="desc-map">
-                <p>The “Trade-to-GDP” ratio of Australia's trade partners is categorized as <b>low, moderate, or high</b>,
-                   reflecting their economic dependence on trade with Australia. Many <b>Asian countries</b>, like China, 
-                   Thailand, India, and Vietnam, show moderate to high ratios, emphasizing their reliance on Australian imports and exports. 
-                   In contrast, <b>other continents</b> typically have low to moderate ratios, suggesting potential areas for strengthening 
-                trade relationships.</p>
+                <div class="desc-map-container">
+                  <div class="desc-box">
+                    <p>The “Trade-to-GDP” ratio of Australia's trade partners is categorized as <b>low, moderate, or high</b>, reflecting their economic dependence on trade with Australia. 
+                      Many <b>Asian countries</b>, like China, Thailand, India, and Vietnam, show moderate to high ratios, highlighting strong trade ties. 
+                      These countries play a vital role in Australia's trade landscape, with consistent growth over recent years. </p>
+
+                  </div>
+                  <div class="desc-box">
+                    <p>In contrast, <b>other continents</b> typically maintain low to moderate trade-to-GDP ratios, indicating room for strengthening trade relationships. 
+                      Regions like <b>Europe</b> and <b>South America</b> show potential for expanding trade partnerships. 
+                      Recent diplomatic efforts and trade negotiations have opened discussions for increased collaboration, 
+                      which could lead to more balanced trade flows, benefiting both Australia and its global partners.</p>                    
+                  </div>
               </div>
                 </div>
             </div>
@@ -68,40 +75,48 @@
         <!-- end pure grid group -->
 
 
-        <!-- Line chart map -->
         <div class="vis1-container">
-            <div class="pure-g">
-            <div class="pure-u-1-1">
-               
-                    <!-- Vega-Lite chart will be embedded here -->
-                    <div id="exp_chart"></div>
-                       <!-- Dropdown for selecting year -->
-                    <div id="dropdown">
-                        <label for="yearSelect">Year: </label>
-                        <select id="yearSelect">
-                            <option value="2014">2014</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020" selected>2020</option>
-                        </select>
-                    </div>
-                    <div class ="desc-chart1">
-                    <!-- Paragraph that appears below the chart and dropdown -->
-                    <p>The graphs above show a clear trend of <b>increasing </b>export value from 2014 to 2020, 
-                        particularly in industries such as Mining and Manufacturing, 
-                        which have seen steady growth. The bar chart then further breaks down the industry's exports 
-                        by the Australian states, with <b>Western Australia</b> leading in export value for every industry,
-                        especially for the mining industry. In contrast, <b>Northern Territory</b> and
-                        <b>Tasmania</b>have the least export values for all the industries. This regional analysis
-                        highlights the economic importance of industries specific to each state. </p>
+          <div class="pure-g">
+              <div class="pure-u-1-1">
+                  <!-- Vega-Lite chart will be embedded here -->
+                  <div id="exp_chart"></div>
+                  
+                  <!-- Dropdown for selecting year -->
+                  <div id="dropdown">
+                      <label for="yearSelect">Year: </label>
+                      <select id="yearSelect">
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2016">2016</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2020" selected>2020</option>
+                      </select>
+                  </div>
+                  
+                  <!-- Container for the two text boxes -->
+                  <div class="desc-map-container">
+                      <div class="desc-box">
+                        <p>
+                          The graphs above show a clear trend of <b>increasing</b> export value from 2014 to 2020,
+                          particularly in industries such as Mining and Manufacturing, which have seen steady growth.
+                          The bar chart then further breaks down the industry's exports by the Australian states, with
+                          <b>Western Australia</b> leading in export value for every industry, especially for the mining industry.
+                        </p>                      
                       </div>
-                </div>
-            </div>
-        </div>
-
+                      <div class="desc-box">
+                        <p>
+                          In contrast, <b>Northern Territory</b> and <b>Tasmania</b> have the least export values for all the industries.
+                          This regional analysis highlights the economic importance of industries specific to each state.
+                          It underscores the disparities in export performance among different regions, emphasizing areas that may benefit from economic development initiatives.
+                        </p>      
+                     </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
         <div class="vis2-container">
           <div class="pure-g">
           <div class="pure-u-1-1">

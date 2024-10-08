@@ -1,221 +1,197 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Australia's Import Trends by Industry Country (2018-2020)",
-        "subtitle": [
-          "Hint: Click the cell to update the radial plot by Industry and double click to reset"
-        ],
-        "subtitleFont": "Afacad Flux",
-        "anchor": "middle"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia's Import Trends by Industry Country (2018-2020)",
+    "subtitle": [
+      "Hint: Click the cell to update the radial plot by Industry and double click to reset"
+    ],
+    "subtitleFont": "Afacad Flux",
+    "anchor": "middle"
+  },
+  "hconcat": [
+    {
+      "width": 270,
+      "height": 280,
+      "data": {
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
       },
-    "hconcat": [
-      {
-        "width": 270,  
-        "height": 280,
-        "data": {
-          "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
-        },
-        "transform": [
-            {
-                "filter": "datum.Country != 'India' && datum.Country != 'Taiwan'"
-            }
-        ],
-        "encoding": {
-          "x": {
-            "field": "Year", 
-            "type": "ordinal", 
-            "title": "Year"
-          },
-          "y": {
-            "field": "Country", 
-            "type": "nominal", 
-            "title": "Country"
-          },
-          "color": {
-            "condition": {
-              "param": "click",
-              "aggregate": "sum",
-              "field": "Value($m)",
-              "type": "quantitative",
-              "scale": {"scheme": "yellowgreen"},
-              "legend": {
-                "title": "Import Value($m)",
-                "direction": "vertical",
-                "gradientLength": 100,
-                "titleFontSize": 14,
-                "labelFontSize": 12
-              }
-            },
-            "value": "grey"
-          },
-          "stroke": {
-            "condition": {
-              "param": "click",
-              "empty": false,
-              "value": "black"
-            },
-            "value": null
-          },
-          "opacity": {
-            "condition": {
-              "param": "click",
-              "value": 1
-            },
-            "value": 0.2
-          }
-        },
-        "layer": [
-          {
-            "params": [
-              {
-                "name": "click",
-                "select": {
-                  "type": "point",
-                  "fields": ["Year", "Country"],
-                  "clear": "dblclick"
-                }
-              }
-            ],
-            "mark": {"type":"rect", "strokeWidth": 2},
-            "encoding": {
-              "tooltip": [
-                {"field": "Country", "type": "nominal", "title": "Country"},
-                {"field": "Year", "type": "ordinal", "title": "Year"},
-                {
-                  "aggregate": "sum",
-                  "field": "Value($m)",
-                  "type": "quantitative",
-                  "title": "Total Value"
-                }
-              ]
-            }
-          },
-          {
-            "mark": {
-              "type": "text",
-              "font": "Afacad Flux",
-              "fontSize": 14
-            },
-            "encoding": {
-              "text": {
-                "aggregate": "sum",
-                "field": "Value($m)",
-                "type": "quantitative",
-                "format": ","
-              },
-              "color": {"value": "black"},
-              "size": {"value": 12}
-            }
-          }
-        ]
-      },
-      { 
-        "width": 250,  
-        "height": 320, 
-        "data": {
-          "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
-        },
-        "transform": [
-          {
-            "filter": "length(data('click_store')) == 0 || (datum.Year == data('click_store')[0].values[0] && datum.Country == data('click_store')[0].values[1])"
-          },
-          {
-            "calculate": "length(data('click_store')) == 0 ? 'All Years' : (data('click_store')[0].values[0] ? data('click_store')[0].values[0] : 'All Years')",
-            "as": "SelectedYear"
-          },
-          {
-            "calculate": "length(data('click_store')) == 0 ? 'All Countries' : (data('click_store')[0].values[1] ? data('click_store')[0].values[1] : 'All Countries')",
-            "as": "SelectedCountry"
-          }
-        ],
-        "layer": [
-          {
-            "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
-          },
-          {
-            "mark": {
-              "type": "text", 
-              "radiusOffset": 30,
-              "font": "Afacad Flux",
-              "fontSize": 14
-            },
-            "encoding": {
-              "text": {
-                "aggregate": "sum",
-                "field": "Value($m)",
-                "type": "quantitative",
-                "format": ","
-              }
-            }
-          }
-        ],
-        "encoding": {
-          "theta": {
+      "transform": [
+        {"filter": "datum.Country != 'India' && datum.Country != 'Taiwan'"}
+      ],
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+        "y": {"field": "Country", "type": "nominal", "title": "Country"},
+        "color": {
+          "condition": {
+            "param": "click",
             "aggregate": "sum",
             "field": "Value($m)",
             "type": "quantitative",
-            "stack": true
-          },
-          "color": {
-            "field": "Industry",
-            "type": "nominal",
-            "scale": {
-              "domain": ["Manufacturing", "Other industries", "Retail trade", "Wholesale trade"], 
-              "range": ["#c37857", "#ffa952", "#93a7d1", "#b6cdbd"]
-            },
+            "scale": {"scheme": "yellowgreen"},
             "legend": {
-              "title": "Industry",
-              "orient": "none",
-              "legendX": 250,
-              "legendY": -3,
+              "title": "Import Value($m)",
+              "direction": "vertical",
+              "gradientLength": 100,
               "titleFontSize": 14,
               "labelFontSize": 12
             }
           },
-          "radius": {
+          "value": "grey"
+        },
+        "stroke": {
+          "condition": {"param": "click", "empty": false, "value": "black"},
+          "value": null
+        },
+        "opacity": {"condition": {"param": "click", "value": 1}, "value": 0.2}
+      },
+      "layer": [
+        {
+          "params": [
+            {
+              "name": "click",
+              "select": {
+                "type": "point",
+                "fields": ["Year", "Country"],
+                "clear": "dblclick"
+              }
+            }
+          ],
+          "mark": {"type": "rect", "strokeWidth": 2},
+          "encoding": {
+            "tooltip": [
+              {"field": "Country", "type": "nominal", "title": "Country"},
+              {"field": "Year", "type": "ordinal", "title": "Year"},
+              {
+                "aggregate": "sum",
+                "field": "Value($m)",
+                "type": "quantitative",
+                "title": "Total Value"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {"type": "text", "font": "Afacad Flux", "fontSize": 14},
+          "encoding": {
+            "text": {
+              "aggregate": "sum",
+              "field": "Value($m)",
+              "type": "quantitative",
+              "format": ","
+            },
+            "color": {"value": "black"},
+            "size": {"value": 12}
+          }
+        }
+      ]
+    },
+    {
+      "width": 250,
+      "height": 320,
+      "data": {
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/imp_industry_year.csv"
+      },
+      "transform": [
+        {
+          "filter": "length(data('click_store')) == 0 || (datum.Year == data('click_store')[0].values[0] && datum.Country == data('click_store')[0].values[1])"
+        },
+        {
+          "calculate": "length(data('click_store')) == 0 ? 'All Years' : (data('click_store')[0].values[0] ? data('click_store')[0].values[0] : 'All Years')",
+          "as": "SelectedYear"
+        },
+        {
+          "calculate": "length(data('click_store')) == 0 ? 'All Countries' : (data('click_store')[0].values[1] ? data('click_store')[0].values[1] : 'All Countries')",
+          "as": "SelectedCountry"
+        }
+      ],
+      "layer": [
+        {"mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}},
+        {
+          "mark": {
+            "type": "text",
+            "radiusOffset": 30,
+            "font": "Afacad Flux",
+            "fontSize": 14
+          },
+          "encoding": {
+            "text": {
+              "aggregate": "sum",
+              "field": "Value($m)",
+              "type": "quantitative",
+              "format": ","
+            }
+          }
+        }
+      ],
+      "encoding": {
+        "theta": {
+          "aggregate": "sum",
+          "field": "Value($m)",
+          "type": "quantitative",
+          "stack": true
+        },
+        "color": {
+          "field": "Industry",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Manufacturing",
+              "Other industries",
+              "Retail trade",
+              "Wholesale trade"
+            ],
+            "range": ["#c37857", "#ffa952", "#93a7d1", "#b6cdbd"]
+          },
+          "legend": {
+            "title": "Industry",
+            "orient": "none",
+            "legendX": 250,
+            "legendY": -3,
+            "titleFontSize": 14,
+            "labelFontSize": 12
+          }
+        },
+        "radius": {
+          "aggregate": "sum",
+          "field": "Value($m)",
+          "scale": {
+            "type": "sqrt",
+            "zero": true,
+            "rangeMin": 1,
+            "rangeMax": 135
+          }
+        },
+        "tooltip": [
+          {"field": "SelectedYear", "type": "ordinal", "title": "Year"},
+          {"field": "SelectedCountry", "type": "nominal", "title": "Country"},
+          {"field": "Industry", "type": "nominal", "title": "Industry"},
+          {
             "aggregate": "sum",
             "field": "Value($m)",
-            "scale": {
-              "type": "sqrt",
-              "zero": true,
-              "rangeMin": 1, 
-              "rangeMax": 135
-            }
-          },
-          "tooltip": [
-            {"field": "SelectedYear", "type": "ordinal", "title": "Year"},
-            {"field": "SelectedCountry", "type": "nominal", "title": "Country"},
-            {"field": "Industry", "type": "nominal", "title": "Industry"},
-            {"aggregate": "sum","field": "Value($m)", "type": "quantitative", "title": "Imported Value($m)", "format": ","}
-          ]
-        }
-      }
-    ],"spacing": 0,
-    "config": {
-      "view": {
-        "stroke": null
-      },
-      "axis": {
-        "labelFont": "Afacad Flux",
-        "titleFont": "Afacad Flux",
-        "titleFontSize": 16,
-        "labelFontSize": 14
-      },
-      "legend": {
-        "labelFont": "Afacad Flux",
-        "titleFont": "Afacad Flux",
-        "titleFontSize": 16,
-        "labelFontSize": 14
-      },
-      "header": {
-        "labelFont": "Afacad Flux",
-        "titleFont": "Afacad Flux"
-      },
-      "title": {
-        "font": "Afacad Flux",
-        "fontSize": 20,
-        "fontWeight": 600
+            "type": "quantitative",
+            "title": "Imported Value($m)",
+            "format": ","
+          }
+        ]
       }
     }
+  ],
+  "spacing": 0,
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelFont": "Afacad Flux",
+      "titleFont": "Afacad Flux",
+      "titleFontSize": 16,
+      "labelFontSize": 14
+    },
+    "legend": {
+      "labelFont": "Afacad Flux",
+      "titleFont": "Afacad Flux",
+      "titleFontSize": 16,
+      "labelFontSize": 14
+    },
+    "header": {"labelFont": "Afacad Flux", "titleFont": "Afacad Flux"},
+    "title": {"font": "Afacad Flux", "fontSize": 20, "fontWeight": 600}
   }
-  
+}

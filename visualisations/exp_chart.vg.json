@@ -40,7 +40,7 @@
             "legend": null,
             "scale": {
               "domain": ["Mining", "Agriculture and fishing", "Manufacturing", "Wholesale trade", "Other"], 
-              "range": ["#c37857", "#3baea0", "#ffa952", "#8dc6ff", "#2e79ba","#b0757c"] 
+              "range": ["#c37857", "#3baea0", "#A6761D", "#D3B98C", "#C5C865"] 
             }      
           },
           "value": "grey"
