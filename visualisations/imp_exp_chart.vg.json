@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A pyramid chart for top 5 and bottom 5 countries based on import and export values.",
+    "data": {
+      "url": "path_to_your_data.csv"
+    },
+    "transform": [
+      {
+        "window": [
+          {
+            "op": "rank",
+            "as": "rank_import"
+          }
+        ],
+        "sort": [
+          {"field": "import_value", "order": "descending"}
+        ]
+      },
+      {
+        "filter": "(datum.rank_import <= 5 || datum.rank_import > (totalCountries - 5))"  // Filter for top 5 and bottom 5 countries
+      },
+      {
+        "calculate": "datum.type == 'Import' ? -datum.value : datum.value", 
+        "as": "signed_value"
+      }
+    ],
+    "width": 300,
+    "height": 200,
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "country",
+        "axis": null,
+        "sort": "descending"
+      },
+      "x": {
+        "aggregate": "sum",
+        "field": "signed_value",
+        "title": "Value ($m)",
+        "axis": {"format": "s"}
+      },
+      "color": {
+        "field": "type",
+        "scale": {"range": ["#1f77b4", "#ff7f0e"]},
+        "legend": {"orient": "top", "title": "Trade Type"}
+      },
+      "tooltip": [
+        {"field": "country", "title": "Country"},
+        {"field": "type", "title": "Trade Type"},
+        {"field": "value", "title": "Value ($m)", "format": ","}
+      ]
+    },
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false}
+    },
+    "selection": {
+      "topBottom": {
+        "type": "single",
+        "fields": ["type"],
+        "bind": {"input": "radio", "options": ["Top 5", "Bottom 5"], "labels": ["Top 5", "Bottom 5"], "name": "Countries: "}
+      }
+    },
+    "transform": [
+      {
+        "filter": "datum.rank <= 5 && topBottom === 'Top 5' || datum.rank >= (totalCountries - 5) && topBottom === 'Bottom 5'"
+      }
+    ]
+  }
+  
