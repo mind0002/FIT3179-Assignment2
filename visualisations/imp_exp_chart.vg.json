@@ -1,70 +1,170 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A pyramid chart for top 5 and bottom 5 countries based on import and export values.",
-    "data": {
-      "url": "path_to_your_data.csv"
-    },
-    "transform": [
-      {
-        "window": [
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Top 5 Countries by Total Trade (Imports and Exports)",
+    "subtitle": "Hint: Select a year range by brushing over the area chart on the left to filter the bar chart on the right",
+    "anchor": "middle"
+  },
+  "hconcat": [
+    {
+      "width": 250,
+      "height": 280,
+      "title": {
+        "text": "Import and Export Evolution Over Time",
+        "anchor": "start"
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/country_data.csv"
+      },
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "sum", "field": "Import", "as": "Import"},
+            {"op": "sum", "field": "Export", "as": "Export"}
+          ],
+          "groupby": ["Year"]
+        },
+        {"fold": ["Import", "Export"], "as": ["Trade_Type", "Trade_Value"]},
+        {"calculate": "year(datum.Year)", "as": "data_year"}
+      ],
+      "mark": "area",
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal", "title": "Year"},
+        "y": {
+          "field": "Trade_Value",
+          "type": "quantitative",
+          "title": "Trade Value ($m)"
+        },
+        "color": {
+          "field": "Trade_Type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Import", "Export"],
+            "range": ["#c44e52", "#4c72b0"]
+          },
+          "legend": {"title": "Trade Type"}
+        },
+        "tooltip": [
+          {"field": "data_year", "type": "quantitative", "title": "Year"},
+          {"field": "Trade_Type", "type": "nominal", "title": "Trade Type"},
           {
-            "op": "rank",
-            "as": "rank_import"
+            "field": "Trade_Value",
+            "type": "quantitative",
+            "title": "Trade Value ($m)",
+            "format": ","
           }
-        ],
-        "sort": [
-          {"field": "import_value", "order": "descending"}
         ]
       },
-      {
-        "filter": "(datum.rank_import <= 5 || datum.rank_import > (totalCountries - 5))"  // Filter for top 5 and bottom 5 countries
-      },
-      {
-        "calculate": "datum.type == 'Import' ? -datum.value : datum.value", 
-        "as": "signed_value"
-      }
-    ],
-    "width": 300,
-    "height": 200,
-    "mark": "bar",
-    "encoding": {
-      "y": {
-        "field": "country",
-        "axis": null,
-        "sort": "descending"
-      },
-      "x": {
-        "aggregate": "sum",
-        "field": "signed_value",
-        "title": "Value ($m)",
-        "axis": {"format": "s"}
-      },
-      "color": {
-        "field": "type",
-        "scale": {"range": ["#1f77b4", "#ff7f0e"]},
-        "legend": {"orient": "top", "title": "Trade Type"}
-      },
-      "tooltip": [
-        {"field": "country", "title": "Country"},
-        {"field": "type", "title": "Trade Type"},
-        {"field": "value", "title": "Value ($m)", "format": ","}
-      ]
+      "selection": {"brush": {"type": "interval", "encodings": ["x"]}}
     },
-    "config": {
-      "view": {"stroke": null},
-      "axis": {"grid": false}
+    {
+      "title": {"text": "Top 5 Countries by Total Trade (Imports and Exports)"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-Assignment2/refs/heads/main/data/country_data.csv"
+      },
+      "transform": [
+        {
+          "calculate": "length(data('brush_store')) > 0 ? year(data('brush_store')[0].values[0][0]) : 'All'",
+          "as": "Year_From"
+        },
+        {
+          "calculate": "length(data('brush_store')) > 0 ? year(data('brush_store')[0].values[0][1]) : 'All'",
+          "as": "Year_To"
+        },
+        {
+          "filter": "length(data('brush_store')) == 0 || (datum.Year >= data('brush_store')[0].values[0][0] && datum.Year <= data('brush_store')[0].values[0][1])"
+        },
+        {
+          "aggregate": [
+            {"op": "sum", "field": "Import", "as": "Total_Import"},
+            {"op": "sum", "field": "Export", "as": "Total_Export"}
+          ],
+          "groupby": ["Country"]
+        },
+        {"calculate": "'Import'", "as": "Trade_Type_Import"},
+        {"calculate": "'Export'", "as": "Trade_Type_Export"},
+        {
+          "calculate": "datum.Total_Import + datum.Total_Export",
+          "as": "Total_Trade"
+        },
+        {
+          "window": [{"op": "rank", "as": "rank"}],
+          "sort": [{"field": "Total_Trade", "order": "descending"}]
+        },
+        {"filter": "datum.rank <= 5"},
+        {
+          "fold": ["Total_Import", "Total_Export"],
+          "as": ["Trade_Type", "Trade_Value"]
+        },
+        {
+          "calculate": "datum.Trade_Type === 'Total_Import' ? 'Import' : 'Export'",
+          "as": "Trade_Legend"
+        },
+        {
+          "calculate": "datum.Trade_Type === 'Total_Import' ? -datum.Trade_Value : datum.Trade_Value",
+          "as": "Signed_Trade_Value"
+        }
+      ],
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "axis": {"title": "Country"},
+          "sort": "-x"
+        },
+        "x": {
+          "field": "Signed_Trade_Value",
+          "type": "quantitative",
+          "title": "Trade Value ($m)",
+          "axis": {"format": "~s", "labelExpr": "abs(datum.value)"}
+        },
+        "color": {
+          "field": "Trade_Legend",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Import", "Export"],
+            "range": ["#c44e52", "#4c72b0"]
+          },
+          "legend": {
+            "title": "Trade Type",
+            "orient": "none",
+            "legendX": 500,
+            "legendY": -3,
+            "titleFontSize": 14,
+            "labelFontSize": 12
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Trade_Legend", "type": "nominal", "title": "Trade Type"},
+          {
+            "field": "Trade_Value",
+            "type": "quantitative",
+            "title": "Trade Value ($m)",
+            "format": ","
+          }
+        ]
+      },
+      "width": 250,
+      "height": 300
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelFont": "Afacad Flux",
+      "titleFont": "Afacad Flux",
+      "titleFontSize": 16,
+      "labelFontSize": 14
     },
-    "selection": {
-      "topBottom": {
-        "type": "single",
-        "fields": ["type"],
-        "bind": {"input": "radio", "options": ["Top 5", "Bottom 5"], "labels": ["Top 5", "Bottom 5"], "name": "Countries: "}
-      }
+    "legend": {
+      "labelFont": "Afacad Flux",
+      "titleFont": "Afacad Flux",
+      "titleFontSize": 16,
+      "labelFontSize": 14
     },
-    "transform": [
-      {
-        "filter": "datum.rank <= 5 && topBottom === 'Top 5' || datum.rank >= (totalCountries - 5) && topBottom === 'Bottom 5'"
-      }
-    ]
+    "header": {"labelFont": "Afacad Flux", "titleFont": "Afacad Flux"},
+    "title": {"font": "Afacad Flux", "fontSize": 20, "fontWeight": 600}
   }
-  
+}

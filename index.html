@@ -132,14 +132,14 @@
           </div>
       </div>
 
-      <div class="vis2-container">
+      <div class="vis3-container">
         <div class="pure-g">
         <div class="pure-u-1-1">
            
                 <!-- Vega-Lite chart will be embedded here -->
-                <div id="imp2_chart"></div>
+                <div id="imp_exp_chart"></div>
                    <!-- Dropdown for selecting year -->
-                <div class ="desc-chart2">
+                <div class ="desc-chart3">
                 <!-- Paragraph that appears below the chart and dropdown -->
                 <p> TEXT TEXT TEXT TEXT </p>
                 </div>
@@ -153,6 +153,7 @@
         var choropleth_map = "visualisations/choropleth_map.vg.json";
         var exp_chart = "visualisations/exp_chart.vg.json";
         var imp_chart = "visualisations/imp_chart.vg.json";
+        var imp_exp_chart = "visualisations/imp_exp_chart.vg.json";
 
         vegaEmbed('#map', choropleth_map, { "actions": false }).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -171,7 +172,7 @@
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        vegaEmbed('#imp2_chart', imp_chart, { "actions": false }).then(function (result) {
+        vegaEmbed('#imp_exp_chart', imp_exp_chart, { "actions": false }).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
