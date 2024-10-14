@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Australia's Export Trends by Industry and State (2014-2020)",
+    "text": "Australia's Export Trends by Industry & State (2014-2020)",
     "subtitle": [
-      "Hint: Click the line to update the bar chart by Industry and double click to reset"
+      "Hint: Click the line to choose the Industry shown in the bar chart and double click to reset"
     ],
     "subtitleFont": "Afacad Flux",
     "anchor": "middle"
@@ -40,7 +40,7 @@
             "legend": null,
             "scale": {
               "domain": ["Mining", "Agriculture and fishing", "Manufacturing", "Wholesale trade", "Other"], 
-              "range": ["#c37857", "#3baea0", "#A6761D", "#D3B98C", "#C5C865"] 
+              "range": ["#c37857", "#bb5a5a", "#c3a655", "#94784c", "#713045"] 
             }      
           },
           "value": "grey"
@@ -166,7 +166,10 @@
         "x": {
           "field": "State",
           "type": "nominal",
-          "title": "State"
+          "title": "State",
+          "axis": {
+            "labelAngle": 0 
+          }
         },
         "y": {
           "aggregate": "sum",
@@ -175,7 +178,7 @@
           "title": "Export Value ($m)"
         },
         "color": {
-          "value": "#639a67"
+          "value": "#3a7563"
         },
         "tooltip": [
           {

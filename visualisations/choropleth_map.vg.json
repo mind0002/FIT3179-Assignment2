@@ -136,7 +136,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Very Low", "Low", "Moderate", "High"],
-            "range": ["#e5f5e0", "#a1d99b", "#41ab5d", "#238b45"]
+            "range": ["#e5f5e0", "#a1d99b", "#41ab5d", "#38817a"]
           },
           "legend": {
             "orient": "right",

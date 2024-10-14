@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Australia's Import Trends by Industry Country (2018-2020)",
+    "text": "Australia's Import Trends by Industry & Country (2018-2021)",
     "subtitle": [
-      "Hint: Click the cell to update the radial plot by Industry and double click to reset"
+      "Hint: Click the cell to choose the country and year shown in the radial plot by Industry and double click to reset"
     ],
     "subtitleFont": "Afacad Flux",
     "anchor": "middle"
@@ -19,7 +19,9 @@
         {"filter": "datum.Country != 'India' && datum.Country != 'Taiwan'"}
       ],
       "encoding": {
-        "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+        "x": {"field": "Year", "type": "ordinal", "title": "Year",  "axis": {
+          "labelAngle": 0 
+        }},
         "y": {"field": "Country", "type": "nominal", "title": "Country"},
         "color": {
           "condition": {
@@ -140,7 +142,7 @@
               "Retail trade",
               "Wholesale trade"
             ],
-            "range": ["#c37857", "#ffa952", "#93a7d1", "#b6cdbd"]
+            "range": ["#c3a655", "#713045", "#9fa180", "#94784c"]
           },
           "legend": {
             "title": "Industry",
