@@ -47,7 +47,7 @@
           "legend": {
             "title": "Trade Type",
             "orient": "none",
-            "legendX": 750,
+            "legendX": 730,
             "legendY": 10,
             "titleFontSize": 14,
             "labelFontSize": 12
@@ -126,10 +126,10 @@
           "legend": {
             "title": "Trade Type",
             "orient": "none",
-            "legendX": 750,
+            "legendX": 500,
             "legendY": 10,
-            "titleFontSize": 14,
-            "labelFontSize": 12
+            "titleFontSize": 16,
+            "labelFontSize": 14
           }
         },
         "tooltip": [
@@ -156,8 +156,8 @@
     "legend": {
       "labelFont": "Afacad Flux",
       "titleFont": "Afacad Flux",
-      "titleFontSize": 16,
-      "labelFontSize": 14
+      "titleFontSize": 14,
+      "labelFontSize": 12
     },
     "header": {"labelFont": "Afacad Flux", "titleFont": "Afacad Flux"},
     "title": {"font": "Afacad Flux", "fontSize": 20, "fontWeight": 600}
