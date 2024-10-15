@@ -221,8 +221,8 @@
     "legend": {
       "labelFont": "Afacad Flux",
       "titleFont": "Afacad Flux",
-      "titleFontSize": 16,
-      "labelFontSize": 14
+      "titleFontSize": 14,
+      "labelFontSize": 12
     },
     "header": {
       "labelFont": "Afacad Flux",
