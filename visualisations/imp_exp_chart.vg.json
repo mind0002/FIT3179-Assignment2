@@ -47,7 +47,7 @@
           "legend": {
             "title": "Trade Type",
             "orient": "none",
-            "legendX": 730,
+            "legendX": 760,
             "legendY": 10,
             "titleFontSize": 14,
             "labelFontSize": 12
