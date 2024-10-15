@@ -94,12 +94,12 @@ body {
     
 }
 
-.desc-map-container {
+.desc-container {
     display: flex;
-    justify-content: space-around;
-    align-items: stretch; /* Ensure equal height for both boxes */
     width: 100%;
+    align-items: stretch; /* Ensure equal height for both boxes */
     margin-top: 10px;
+    margin-left: 27px;
 }
 
 .desc-box p {
@@ -110,27 +110,13 @@ body {
     background-color: #CCE0AC;
     width: 45%; /* Adjust width as needed */
     padding: 10px;
+    margin-right: 20px;
+    margin-left: 2px;
     border-radius: 5px;
     font-size: 16px;
     line-height: 1.15; /* Improve readability */
     box-sizing: border-box;
     text-align: left; /* Align text to the left */
-}
-
-.desc-map {
-    position: relative;
-    background-color: #CCE0AC;
-    text-align: center;
-    width: 90%; /* Reduce the width to ensure it doesn't overflow */
-    padding: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    margin: 0 auto; /* This centers the green box horizontally */
-    margin-top: 1px;
-    margin-left: 35px; /* This moves the green box to the left */
-    font-size: 16px; /* Change this value to adjust the font size */
-    display: block;
 }
 
 .vis1-container {
@@ -149,21 +135,6 @@ body {
     border-radius: 5px;
 }
 
-.desc-chart1{
-    position: relative;
-    background-color: #CCE0AC;
-    text-align: center;
-    width: 89%; /* Reduce the width to ensure it doesn't overflow */
-    padding: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    margin: 0 auto; /* This centers the green box horizontally */
-    margin-top: 1px;
-    margin-left: 35px; /* This moves the green box to the left */
-    font-size: 16px; /* Change this value to adjust the font size */
-    display: block;
-}
 
 /* Dropdown menu positioning relative to its container */
 #dropdown {
@@ -200,20 +171,6 @@ body {
     border-radius: 5px;
 }
 
-.desc-chart2{
-    position: relative;
-    background-color: #CCE0AC;
-    text-align: center;
-    width: 87%; /* Reduce the width to ensure it doesn't overflow */
-    padding: 2px;
-    padding-left: 10px;
-    border-radius: 5px;
-    margin: 0 auto; /* This centers the green box horizontally */
-    margin-top: 1px;
-    margin-left: 35px; /* This moves the green box to the left */
-    font-size: 16px; /* Change this value to adjust the font size */
-    display: block;
-}
 
 .vis3-container {
     position: relative;
@@ -231,26 +188,11 @@ body {
     border-radius: 5px;
 }
 
-.desc-chart3{
-    position: relative;
-    background-color: #CCE0AC;
-    text-align: center;
-    width: 87%; /* Reduce the width to ensure it doesn't overflow */
-    padding: 2px;
-    padding-left: 10px;
-    border-radius: 5px;
-    margin: 0 auto; /* This centers the green box horizontally */
-    margin-top: 1px;
-    margin-left: 35px; /* This moves the green box to the left */
-    font-size: 16px; /* Change this value to adjust the font size */
-    display: block;
-}
-
 .credit-container {
     background-color: #F4F4F4;
-    padding-left: 15px;
-    padding-right: 10px;
-    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
     text-align: center;
     font-family: 'Afacad Flux', sans-serif;
     font-size: 14px;
