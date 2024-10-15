@@ -3,7 +3,7 @@
   "title": {
     "text": "Australia's Import Trends by Industry & Country (2018-2021)",
     "subtitle": [
-      "Hint: Click the cell to choose the country and year shown in the radial plot by Industry and double click to reset"
+      "Hint: Click a cell on the left to update the year and country of right chart and double click to reset"
     ],
     "subtitleFont": "Afacad Flux",
     "anchor": "middle"
