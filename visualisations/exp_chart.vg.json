@@ -3,7 +3,7 @@
   "title": {
     "text": "Australia's Export Trends by Industry & State (2014-2020)",
     "subtitle": [
-      "Hint: Click the line to choose the Industry shown in the bar chart and double click to reset"
+      "Hint: Click an industry line to filter the bar chart, showing data by state, double-click to reset."
     ],
     "subtitleFont": "Afacad Flux",
     "anchor": "middle"
